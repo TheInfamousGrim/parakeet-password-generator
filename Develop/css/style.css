@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+/* ----------------------------- root variables ----------------------------- */
+
+:root {
+  --midnight-blue: #22223b;
+  --transparent-purple: #4a4e69;
+  --cream-purple: #9a8c98;
+  --dark-cream: #c9ada7;
+  --light-cream: #f2e9e4;
+  --off-white: #f0f2f5;
+  --grey: #dadcdf;
+  --card-radius: 10px;
+  --input-radius: 5px;
+  --box-shadow-settings: rgba(0, 0, 0, 0.15) 0px 4px 5px 0px;
+}
+
 html,
 body,
 .wrapper {
@@ -14,8 +29,12 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: var(--light-cream);
+  font-family: "Inter", sans-serif;
+  color: var(--midnight-blue);
 }
+
+/* ---------------------------- wrapper settings ---------------------------- */
 
 .wrapper {
   padding-top: 30px;
@@ -27,15 +46,51 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  font-weight: 900;
+}
+
+/* --------------------------- password output box -------------------------- */
+
+#password {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  width: 90%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 85px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px dashed #c0c7cf;
+  border-radius: 6px;
+  resize: none;
+  overflow: hidden;
+}
+
+/* ------------------------- copy and generate icons ------------------------- */
+
+.fa-copy:hover {
+  color: var(--transparent-purple);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.generated-password-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card {
   background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
+  border-radius: var(--card-radius);
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  box-shadow: var(--box-shadow-settings);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -72,13 +127,15 @@ header {
   clear: both;
 }
 
+/* ----------------------------- generate button ---------------------------- */
+
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: var(--midnight-blue);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: var(--off-white);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -97,26 +154,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
-}
+/* ----------------------------- phone settings ----------------------------- */
 
 @media (max-width: 690px) {
   .btn {

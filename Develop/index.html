@@ -7,12 +7,39 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ebd783c4ec.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
+        <h3 class="sub-header">Generate a Secure Password</h3>
+        <p class="app-description">
+          Use this tool to create a safe and secure password that will put your
+          security concerns at ease
+        </p>
       </header>
+      <div class="generated-password-container card">
+        <textarea
+          readonly
+          id="password"
+          placeholder="Your Secure Password"
+          aria-label="Generated Password"
+        ></textarea>
+        <div class="icons-container">
+          <i class="fa-solid fa-copy fa-xl"></i>
+          </svg>
+        </div>
+      </div>
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
