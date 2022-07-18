@@ -17,6 +17,7 @@
   --card-radius: 10px;
   --input-radius: 5px;
   --box-shadow-settings: rgba(0, 0, 0, 0.15) 0px 4px 5px 0px;
+  --hover-transition: 0.5s;
 }
 
 html,
@@ -42,11 +43,44 @@ body {
   padding-right: 20px;
 }
 
+/* ------------------------------ card settings ----------------------------- */
+
+/* ----------------------------- header settings ---------------------------- */
+
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-content {
+  margin: 0px 0 2px 0;
+  width: fit-content;
+}
+
+.title-footer {
+  text-align: center;
+}
+
+.title-footer::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: var(--cream-purple);
+  height: 2px;
+}
+
+/* ---------------------- generated password container ---------------------- */
+
+.generated-password-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* --------------------------- password output box -------------------------- */
@@ -72,7 +106,7 @@ header {
   overflow: hidden;
 }
 
-/* ------------------------- copy and generate icons ------------------------- */
+/* -------------------------------- copy icon ------------------------------- */
 
 .fa-copy:hover {
   color: var(--transparent-purple);
@@ -80,19 +114,22 @@ header {
   cursor: pointer;
 }
 
-.generated-password-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* copy-icon phone settings */
+
+@media (max-width: 500px) {
+  .fa-copy {
+    margin-left: 10px;
+  }
 }
 
+/* ----------------------- password settings main body ---------------------- */
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--dark-cream);
   border-radius: var(--card-radius);
   border-width: 1px;
   box-shadow: var(--box-shadow-settings);
   font-size: 18px;
-  margin: 0 auto;
+  margin: 20px auto;
   max-width: 800px;
   padding: 30px 40px;
 }
@@ -101,12 +138,38 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--cream-purple);
   height: 2px;
 }
 
 .card-body {
   min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password-checkboxes-container {
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+.characteristic-description {
+  margin-left: 1rem;
+}
+
+/* ---------------- phone and tablet settings main card body ---------------- */
+
+@media (max-width: 630px) {
+  .card-body {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .password-characteristics-container {
+    margin-top: 40px;
+  }
 }
 
 .card-footer {
@@ -117,7 +180,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--cream-purple);
   height: 2px;
 }
 
@@ -143,6 +206,13 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  transition: all var(--hover-transition);
+  color: var(--midnight-blue);
+  background: var(--off-white);
 }
 
 button[disabled] {

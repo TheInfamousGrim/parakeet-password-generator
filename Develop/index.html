@@ -21,7 +21,10 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Password Generator</h1>
+        <div class="title-container">
+          <h1 class="title-content">Password Generator Tool</h1>
+          <div class="title-footer"></div>
+        </div>
         <h3 class="sub-header">Generate a Secure Password</h3>
         <p class="app-description">
           Use this tool to create a safe and secure password that will put your
@@ -42,15 +45,34 @@
       </div>
       <div class="card">
         <div class="card-header">
-          <h2>Generate a Password</h2>
+          <h2>Adjust Your Password</h2>
         </div>
         <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+          <div class="password-length-container">
+            <p>password length</p>
+            <div class="length-input-container">
+              <input type="number" min="8" max="128" name="lengthNumberInput" id="length-number-input">
+              <input type="range" min="1" max="100" value="1" name="lengthSliderInput" id="length-slider-input">
+            </div>
+          </div>
+          <div class="password-characteristics-container">
+            <div class="password-checkboxes-container">
+              <input type="checkbox" name="uppercaseCheckbox" id="uppercase-checkbox" checked="checked">
+              <p class="characteristic-description">Uppercase</p>
+            </div>
+            <div class="password-checkboxes-container">
+              <input type="checkbox" name="lowercaseCheckbox" id="lowercase-checkbox" checked="checked">
+              <p class="characteristic-description">Lowercase</p>
+            </div>
+            <div class="password-checkboxes-container">
+              <input type="checkbox" name="numbersCheckbox" id="numbers-checkbox" checked="checked">
+              <p class="characteristic-description">Numbers</p>
+            </div>
+            <div class="password-checkboxes-container">
+              <input type="checkbox" name="specialCharactersCheckbox" id="special-characters-checkbox" checked="checked">
+              <p class="characteristic-description">Special Characters</p>
+            </div>
+          </div>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
