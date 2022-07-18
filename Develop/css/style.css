@@ -176,7 +176,7 @@ input[type="range"] {
 /* slider styling */
 /* Chrome, Safari, Opera, and Edge Chromium */
 input[type="range"]::-webkit-slider-runnable-track {
-  background-color: var(--grey);
+  background: var(--grey);
   height: 0.5rem;
   border-radius: var(--card-radius);
 }
