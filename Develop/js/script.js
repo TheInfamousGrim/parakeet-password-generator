@@ -38,9 +38,14 @@ const randomPassFunc = {
 
 /* ------------------------ Check Password Attributes ----------------------- */
 // Password length number input selector
-const passwordNumber = document.querySelector('#length-number-input');
+const passwordNumber = document.querySelector(
+  '#length-number-input[type="number"]'
+);
 // Password length range input selector
-const passwordRange = document.querySelector('#length-slider-input');
+const passwordRange = document.querySelectorAll(
+  '#length-slider-input[type="range"]'
+);
+console.log(passwordRange);
 // Uppercase checkbox selector
 const uppercaseCheckbox = document.querySelector('#uppercase');
 // Lowercase checkbox selector
@@ -109,23 +114,25 @@ function generatePassword(upper, lower, number, special, length) {
 
 /* -------------------- updating password length changes -------------------- */
 // Password range length change event
-function handleRangeInput(e) {
-  if (passwordNumber.value !== passwordRange.value) {
-    passwordNumber.value = passwordRange.value;
+function handleRangeInput() {
+  const sliderVal = document.getElementById('length-slider-input').value;
+  if (passwordNumber.value !== sliderVal) {
+    passwordNumber.value = sliderVal;
   }
 }
 
-passwordRange.addEventListener('mouseup', handleRangeInput);
+passwordRange.forEach((input) => {
+  input.addEventListener('input', handleRangeInput);
+});
 
 // Password number length change event
-function handleNumberInput(e) {
-  console.log('hello');
-  if (passwordNumber.value !== passwordRange.value) {
-    passwordRange.value = passwordNumber.value;
+function handleNumberInput() {
+  const slider = document.getElementById('length-slider-input');
+  if (slider.value !== passwordNumber.value) {
+    slider.value = passwordNumber.value;
   }
 }
-passwordNumber.addEventListener('keyup', handleNumberInput);
-passwordNumber.addEventListener('mouseup', handleNumberInput);
+passwordNumber.addEventListener('input', handleNumberInput);
 
 /* ------------------------------ copy password ----------------------------- */
 // Copy password button selector
@@ -133,7 +140,7 @@ const copyPasswordBtn = document.querySelector('.copy-button');
 
 // handler copy password function
 function handleCopyPassword() {
-  // create a text element for the password to sit in
+  // create a text element for the copied password text content to sit in
   const passwordArea = document.createElement('textarea');
   // create a variable containing the text from the generated password
   const passwordText = passwordTextArea.textContent;

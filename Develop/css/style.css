@@ -20,6 +20,8 @@
   --hover-transition: 0.5s;
 }
 
+/* -------------------------- general page settings ------------------------- */
+
 html,
 body,
 .wrapper {
@@ -42,8 +44,6 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-
-/* ------------------------------ card settings ----------------------------- */
 
 /* ----------------------------- header settings ---------------------------- */
 
@@ -142,7 +142,7 @@ header {
   height: 2px;
 }
 
-.card-body {
+#password-generator-form {
   min-height: 100px;
   display: flex;
   justify-content: space-between;
@@ -155,12 +155,10 @@ header {
   display: flex;
 }
 
-/* 
-
 /* --------------------------- length number input -------------------------- */
 
 #length-number-input {
-  width: 70px;
+  width: 60px;
 }
 
 /* --------------------------- length slider input -------------------------- */
@@ -169,15 +167,17 @@ input[type="range"] {
   appearance: none;
   background: transparent;
   cursor: pointer;
-  width: 15rem;
+  width: 100%;
   margin-left: 2rem;
+  padding-right: 2rem;
 }
 
-/* slider styling */
+/* slider track styling */
 /* Chrome, Safari, Opera, and Edge Chromium */
 input[type="range"]::-webkit-slider-runnable-track {
   background: var(--grey);
   height: 0.5rem;
+  width: 100%;
   border-radius: var(--card-radius);
 }
 
@@ -188,7 +188,7 @@ input[type="range"]::-moz-range-track {
   border-radius: var(--card-radius);
 }
 
-/* Thumb Styles */
+/* Slider thumb Styles */
 /* Chrome, Safari, Opera, and Edge Chromium */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
@@ -196,7 +196,8 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -12px; /* Centers thumb on the track */
   background-color: var(--midnight-blue);
   height: 2rem;
-  width: 1rem;
+  width: 2rem;
+  border-radius: 50%;
 }
 
 /* Firefox */
@@ -209,7 +210,51 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
 }
 
-/* slider in range */
+/* ---------------- phone and tablet settings main card body ---------------- */
+
+@media (max-width: 675px) {
+  #password-generator-form {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* password length sliders and */
+  .password-length-container {
+    margin-bottom: 20px;
+  }
+
+  /* Password characteristics */
+  .password-characteristics-container {
+    margin-bottom: 20px;
+  }
+}
+
+/* --------- phone and tablet settings for password length settings --------- */
+
+@media (max-width: 460px) {
+  .password-length-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* changed to flex column so that password length will fit */
+  .length-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* margin and padding changed for length slider */
+  #length-slider-input {
+    margin-left: 0px;
+    margin-top: 30px;
+    padding: 0;
+  }
+}
+
+/* --------------------------- password attributes -------------------------- */
 
 .password-checkboxes-container {
   display: flex;
@@ -221,18 +266,7 @@ input[type="range"]::-moz-range-thumb {
   margin-left: 1rem;
 }
 
-/* ---------------- phone and tablet settings main card body ---------------- */
-
-@media (max-width: 675px) {
-  .card-body {
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .password-characteristics-container {
-    margin-top: 40px;
-  }
-}
+/* ---------------------------- main card footer ---------------------------- */
 
 .card-footer {
   text-align: center;
@@ -286,7 +320,7 @@ button[disabled] {
   float: right;
 }
 
-/* ----------------------------- phone settings ----------------------------- */
+/* -------------------- phone and tablet settings buttons ------------------- */
 
 @media (max-width: 690px) {
   .btn {
@@ -298,10 +332,19 @@ button[disabled] {
   #password {
     font-size: 1rem;
   }
+
+  .copy-btn .btn button {
+    width: 50px;
+  }
 }
 
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
+  }
+
+  #copy-pass-btn {
+    margin-left: 10px;
+    width: 4rem;
   }
 }

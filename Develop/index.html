@@ -40,7 +40,7 @@
           aria-label="Generated Password"
         ></textarea>
         <div class="icons-container">
-          <button class="copy-button btn">
+          <button class="copy-button btn" id="copy-pass-btn">
             <i class="fa-solid fa-copy fa-xl"></i>
           </button>
           </svg>
@@ -51,33 +51,35 @@
           <h2>Adjust Your Password</h2>
         </div>
         <div class="card-body">
-          <div class="password-length-container">
-            <p>password length</p>
-            <div class="length-input-container">
-              <input type="number" min="8" max="128" name="lengthNumberInput" id="length-number-input">
-              <div class="slider-container">
-                <input type="range" min="8" max="128" value="1" name="lengthSliderInput" id="length-slider-input">
+          <form id="password-generator-form">
+            <div class="password-length-container">
+              <p>password length</p>
+              <div class="length-input-container">
+                <input type="number" min="8" max="128" value="8" name="lengthNumberInput" id="length-number-input">
+                <div class="slider-container">
+                  <input type="range" min="8" max="128" value="8" name="lengthSliderInput" id="length-slider-input">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="password-characteristics-container">
-            <div class="password-checkboxes-container">
-              <input type="checkbox" name="uppercase" id="uppercase" checked="checked">
-              <p class="characteristic-description">Uppercase</p>
+            <div class="password-characteristics-container">
+              <div class="password-checkboxes-container">
+                <input type="checkbox" name="uppercase" id="uppercase" checked="checked">
+                <p class="characteristic-description">Uppercase</p>
+              </div>
+              <div class="password-checkboxes-container">
+                <input type="checkbox" name="lowercase" id="lowercase" checked="checked">
+                <p class="characteristic-description">Lowercase</p>
+              </div>
+              <div class="password-checkboxes-container">
+                <input type="checkbox" name="numbers" id="numbers" checked="checked">
+                <p class="characteristic-description">Numbers</p>
+              </div>
+              <div class="password-checkboxes-container">
+                <input type="checkbox" name="specialCharacters" id="special-characters" checked="checked">
+                <p class="characteristic-description">Special Characters</p>
+              </div>
             </div>
-            <div class="password-checkboxes-container">
-              <input type="checkbox" name="lowercase" id="lowercase" checked="checked">
-              <p class="characteristic-description">Lowercase</p>
-            </div>
-            <div class="password-checkboxes-container">
-              <input type="checkbox" name="numbers" id="numbers" checked="checked">
-              <p class="characteristic-description">Numbers</p>
-            </div>
-            <div class="password-checkboxes-container">
-              <input type="checkbox" name="specialCharacters" id="special-characters" checked="checked">
-              <p class="characteristic-description">Special Characters</p>
-            </div>
-          </div>
+          </form>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
