@@ -45,7 +45,6 @@ const passwordNumber = document.querySelector(
 const passwordRange = document.querySelectorAll(
   '#length-slider-input[type="range"]'
 );
-console.log(passwordRange);
 // Uppercase checkbox selector
 const uppercaseCheckbox = document.querySelector('#uppercase');
 // Lowercase checkbox selector
