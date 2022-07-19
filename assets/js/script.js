@@ -22,7 +22,7 @@ function randomNumbers() {
 
 // generate special characters charcodes: 35 - 122
 function randomSpecial() {
-  const specialCharacters = `!"#$%&()*+-/:;<=>?@`;
+  const specialCharacters = `!"#$%&'()*+,-./:;<=>?@[]^_{|}~`;
   return specialCharacters[
     Math.floor(Math.random() * specialCharacters.length)
   ];
@@ -96,11 +96,11 @@ function generatePassword(upper, lower, number, special, length) {
   if (attributeCount === 0) {
     return 'Please tick at least one password attribute';
   }
-  // find the length of the password and loop through the length, generating the password
+  // find the length of the password and loop through the length, generating the password as determined by password attributes
   for (let i = 0; i < length; i += attributeCount) {
     attributeArray.forEach((attribute) => {
       const charKey = Object.keys(attribute)[0];
-      // Append the character the generated password string
+      // Concatenate the generated character to the password string
       generatedPassword += randomPassFunc[charKey]();
     });
   }
