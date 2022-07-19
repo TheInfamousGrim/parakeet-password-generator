@@ -83,7 +83,8 @@ Made with the help of:
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[MIT License](/LICENSE.md)
+
+[MIT License](/LICENSE)
 
 ## Feedback
 

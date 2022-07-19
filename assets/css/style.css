@@ -58,11 +58,6 @@ header {
   align-items: center;
 }
 
-.title-content {
-  margin: 0px 0 2px 0;
-  width: fit-content;
-}
-
 .title-footer {
   text-align: center;
 }
@@ -73,6 +68,19 @@ header {
   width: 100%;
   background: var(--cream-purple);
   height: 2px;
+}
+
+.sub-header {
+  font-weight: 600;
+}
+
+.app-description {
+  font-weight: 400;
+}
+
+.title-content {
+  margin: 0px 0 2px 0;
+  width: fit-content;
 }
 
 /* ---------------------- generated password container ---------------------- */
@@ -162,52 +170,69 @@ header {
 }
 
 /* --------------------------- length slider input -------------------------- */
+
+#length-slider-input {
+  margin-left: 20px;
+}
+
+/*********** Baseline, reset styles ***********/
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
   cursor: pointer;
   width: 100%;
-  margin-left: 2rem;
-  padding-right: 2rem;
 }
 
-/* slider track styling */
-/* Chrome, Safari, Opera, and Edge Chromium */
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
-  background: var(--grey);
+  background-color: var(--grey);
+  border-radius: 0.5rem;
   height: 0.5rem;
-  width: 100%;
-  border-radius: var(--card-radius);
 }
 
-/* Firefox */
-input[type="range"]::-moz-range-track {
-  background: var(--grey);
-  height: 0.5rem;
-  border-radius: var(--card-radius);
-}
-
-/* Slider thumb Styles */
-/* Chrome, Safari, Opera, and Edge Chromium */
+/* slider thumb */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
   margin-top: -12px; /* Centers thumb on the track */
   background-color: var(--midnight-blue);
+  border-radius: 1rem;
   height: 2rem;
   width: 2rem;
-  border-radius: 50%;
 }
 
-/* Firefox */
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 3px solid var(--off-white);
+  outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: var(--grey);
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
 input[type="range"]::-moz-range-thumb {
-  border: none; /*Removes extra border that FF applies*/
-  border-radius: 0; /*Removes default border-radius that FF applies*/
   background-color: var(--midnight-blue);
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 1rem;
   height: 2rem;
   width: 2rem;
-  border-radius: 50%;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  outline: 3px solid var(--off-white);
+  outline-offset: 0.125rem;
 }
 
 /* ---------------- phone and tablet settings main card body ---------------- */
